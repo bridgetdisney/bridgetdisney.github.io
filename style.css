@@ -5,11 +5,13 @@
  * Modified by: Bridget Disney (7 December 2017) for IS_LT 7356
  *              Created file
  */body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Short Stack', Arial, Helvetica, sans-serif;
+	font-size: 24px;
 	margin: 0 auto;
 	padding: 20px;
-	width: 600px;
-	border: 3px solid blue;
+	width: 800px;
+	color: brown;
+	border: 3px solid brown;
 }
 h2 {
 	margin: 0;
