@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Heat Source");
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<h2 class="left">Step 1: Choose your heat source</h2>
+		<a href="ingredients.html"><h4 class="right">Proceed to Step 2 ===></h4></a>
+		<br>
+		<fieldset>
+			<legend>Campfire</legend>
+			<table>
+				<tr>
+					<td><img src="images/heatcampfire.jpg" height="120px"></td>
+					<td>
+						If you are out camping, the easiest way to melt marshmallows is to make a campfire. Check
+			            out the U.S. Forest Service web site and video for more information.<br><br>
+			            <a href="https://www.nps.gov/articles/campfires.htm" target="_page">Campfire Information from the U.S. Forest Service</a><br>
+			            
+			            <a href="https://youtu.be/9mlsuIQ96oo" target="_page">Video from the U.S. Forest Services on Making and Extinguishing a Campfire</a>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Fireplace</legend>
+			<table>
+				<tr>
+					<td><img src="images/heatfireplace.jpg" height="120px"</td>
+					<td>On cold winter nights, you might want to stay in and roast your marshmallows over an indoor fire.</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Stove</legend>
+			<table>
+				<tr>
+					<td><img src="images/heatstove.jpg" height="120px"</td>
+					<td>No fireplace, no problem! Any burner you use to cook food with work.</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Candle</legend>
+			<table>
+				<tr>
+					<td><img src="images/heatcandle.jpg" height="120px"</td>
+					<td>In case of emergency, even a candle will do. You might be limited to roasting only one marshmallow at a time.</td>
+				</tr>
+			</table>
+		</fieldset>
+	</body>
+</html>

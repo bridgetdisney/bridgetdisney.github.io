@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <!--
-	Name:        index.html
-	Purpose:     Application for tutorial on how to make s'mores
-	Author:      Murache
-	Modified by: Bridget Disney (7 December 2017) for IS_LT 7356
-				 
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
 -->
 <html>
 	<head>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
 		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Home");
+
+				var url = "https://api.flickr.com/services/feeds/photos_public.gne?" +
+					"id=42492816@N06&format=json&jsoncallback=?&tags=more";	  
+				$.getJSON(url, function(data) {
+					var html = "";
+					$.each(data.items, function(i, item) {
+						html += "<img src=" + item.media.m + " height='200px'>  ";
+					});
+					$("#photos").html(html);
+				}); // end getJSON
+				
+				$("#start a").hover(function(){
+    				$(this).stop(true, false).animate({ fontSize: "200%" });
+				}, function() {
+    				$(this).stop(true, false).animate({ fontSize: "100%" });
+				});
+			}); // end ready
+	    </script>
 	</head>
 	<body>
-		IS_LT 7356 Interactive Web Design with JavaScript<br>
-		Bridget Disney<hr>
-		<b>Tutorial Topic:</b> Let's Make S'mores<br>
-		<b>Tutorial Description:</b> This tutorial takes you through the step by step process
-		to make delicious s'mores. You'll be able to choose from different heat
-		sources and cooking tools to create this wonderful campfire treat!
+		<div id="title"></div>
+		<div id="menu"></div>
+		<div id="photos"></div>
+		<br>
+		<h2 id="start"><a href="heatsource.html"> *** Start Here*** </a></h2>
+		<fieldset>
+			<legend>How to use this tutorial</legend>
+		<div>
+			<p>Jump right in by clicking *** Start Here *** for directions to make s'mores. This
+				will guide you through the steps of Heat Source, Ingredients, and Assembly Instructions.</p>
+			<p>The first three links after the home link (Heat Source, Ingredients, Assembly) walk you 
+			   through making an actual s'more. For fun, you can use the 5th link to create a virtual
+			   s'more. Submit a comment in the Comments section, and go to Site Info to
+			   find out more about this web site. </p>
+		</div>
+		</fieldset>
 	</body>
 </html>

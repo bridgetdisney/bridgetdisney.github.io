@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Assembly");
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<h2 class="left">Step 3: Assemble your s'more</h2>
+		<br><br><br><br>
+		<table>
+			<tr>
+				<td width="33%">
+					<fieldset>
+						<legend>Light the heat source</legend>
+						<table>
+							<tr>
+								<td align="center">
+									Light the heat source with a match or other method
+								</td>
+								<td>
+									<img src="images/match.jpg" height="200"> 
+								</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+				<td width="34%">
+					<fieldset>
+						<legend>Layout ingredients</legend>
+						<table>
+							<tr>
+								<td align="center">
+									Have all your ingredients ready so that you will be able to assemble the s'more
+								</td>
+								<td>
+									<img src="images/assemble.jpg" height="200px">	
+								</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<fieldset>
+			<legend>Roast marshmallow</legend>
+			<table align="center">
+				<tr>
+					<td>
+						Put the marshmallow on a skewer and roast over the heat source
+					</td>
+					<td>
+						<img src="images/marshmallowonheat2.jpg" height="120px">
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Assemble s'more</legend>
+			<table>
+				<tr>
+					<td align="center">
+						Put the melted marshmallow on the graham cracker and chocolate, putting another graham cracker on top
+						<video width="600" controls>
+  							<source src="images/smorevideo.mp4" type="video/mp4">
+  							Your browser does not support HTML5 video.
+						</video></td>
+					<td>
+				</td>
+				</tr>
+			</table>
+		</fieldset>
+			</td>
+		</tr>
+	</table>
+	
+	
+	</body>
+</html>

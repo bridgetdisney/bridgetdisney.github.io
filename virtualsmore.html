@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Virtual S'more");
+	    	}); // end ready
+	    	
+	    	$(function() {
+ 
+    			// There's the virtualingredients and the virtualbox
+    			var $virtualingredients = $("#virtualingredients"),
+      			$virtualbox = $("#virtualbox");
+ 
+    			// Let the virtualingredients items be draggable
+    			$("li", $virtualingredients).draggable({
+     				cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+      				revert: "invalid", // when not dropped, the item will revert back to its initial position
+      				containment: "document",
+      				helper: "clone",
+      				cursor: "move" 
+      			}); // end virtualingredients draggable
+ 
+    			// Let the virtualbox be droppable, accepting the virtualingredients items
+    			$virtualbox.droppable({
+      				accept: "#virtualingredients > li",
+      				classes: {"ui-droppable-active": "ui-state-highlight"},
+      				drop: function(event, ui) {deleteImage( ui.draggable);}
+    			}); // end virtualbox droppable
+ 
+    			// Let the virtualingredients be droppable as well, accepting items from the virtualbox
+   				$virtualingredients.droppable({
+      				accept: "#virtualbox li",
+      				classes: {"ui-droppable-active": "custom-state-active"},
+     				drop: function( event, ui) {recycleImage( ui.draggable);}
+    			}); // end virutalingredients droppable
+    		
+    			// Image deletion function
+    			function deleteImage($item) {
+    				
+      				$item.fadeOut(function() {
+        				var $list = $( "ul", $virtualbox ).length ? $( "ul", $virtualbox) :
+        							$( "<ul class='virtualingredients ui-helper-reset'/>").appendTo($virtualbox);
+ 						$item.find( "a.ui-icon-virtualbox" ).remove();
+        				$item.appendTo($list).fadeIn(function() {
+          					$item.animate({width: "48px" }).find("img").animate({ height: "36px"});
+          				}); // end item fadein
+        			}); // end item fadeout
+        			
+     		 	} // end delete image
+     		 	
+    			// Image recycle function
+    			function recycleImage($item) { 
+      				$item.fadeOut(function() {
+        				$item.find("a.ui-icon-refresh").remove().end().css( "width", "96px")
+          				.find( "img" ).css( "height", "72px" )
+          				.end().appendTo( $virtualingredients ).fadeIn();
+      				}); // end item fadeout
+    			} // end recycle image
+ 
+    // Resolve the icons behavior with event delegation
+    $( "ul.virtualingredients > li" ).on( "click", function( event ) {
+      var $item = $( this ),
+        $target = $( event.target );
+ 
+      if ( $target.is( "a.ui-icon-virtualbox" ) ) {
+        deleteImage( $item );
+      } else if ( $target.is( "a.ui-icon-refresh" ) ) {
+        recycleImage( $item );
+      } // end if/else
+ 
+      return false;
+    }); // end ul.virtualingredients
+    
+$('#reset').click(function() {location.reload();});
+$('#makesmore').click(function() { 
+	var found = 0;
+	var n = $("#virtualbox .ui-widget-content").length; 
+	if (n != 4) {
+		alert("You need exactly 4 items to make a virtual s'more.");
+	} else {
+		$("#virtualbox .ui-widget-content").each(function() {
+			if (this.firstChild.nextSibling.id == 'bar') {
+				found++;
+			}
+			if (this.firstChild.nextSibling.id == 'graham') {
+				found++;
+			}
+			if (this.firstChild.nextSibling.id == 'marshmallow') {
+				found++;
+			}
+			if (this.firstChild.nextSibling.id == 'skewer' || this.firstChild.nextSibling.id == "skewersticks") {
+				found++;
+			}
+		}); // end each
+		if (found == 4) {
+			location.href = "congratulations.html";
+		} else {
+			alert("You need different ingredients. Please try again!");
+		}
+	} // end else
+  }); // end make smore click
+}); // end document ready
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<div id="virtualsmore">
+		<h3>Drag the correct images into the box and click the fire icon to make a virtual s'more.</h3>
+		
+		<div class="ui-widget ui-helper-clearfix">
+ 
+<ul id="virtualingredients" class="virtualingredients ui-helper-reset ui-helper-clearfix">
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="saltine" src="images/crackerssaltine.jpg" alt="Saltine Crackers" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="graham" src="images/crackersgraham.jpg" alt="Graham Crackers" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="trisket" src="images/crackerstrisket.jpg" alt="Trisket Crackers" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="bar" src="images/chocolatehershey.jpg" alt="Chocolate Bar" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="donut" src="images/chocolatedonut.png" alt="Chocolate Donut" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="cake" src="images/chocolatecake.jpg" alt="Chocolate Cake" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="marshmallow" src="images/marshmallow.jpg" alt="Marshmallow" width="96" height="72">
+  </li>
+    <li class="ui-widget-content ui-corner-tr">
+    <img id="candy" src="images/candy.jpg" alt="Candy" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="gummies" src="images/gummies.jpg" alt="Gummies" width="96" height="72">
+  </li>
+    <li class="ui-widget-content ui-corner-tr">
+    <img id="pencil" src="images/pencil.jpg" alt="Pencil" width="96" height="72">
+  </li>
+    <li class="ui-widget-content ui-corner-tr">
+    <img id="hammer" src="images/hammer.png" alt="Hammer" width="96" height="72">
+  </li>
+  <li class="ui-widget-content ui-corner-tr">
+    <img id="skewer" src="images/skewer.png" alt="Skewer" width="96" height="72">
+  </li>
+</ul>
+ 
+<div id="virtualbox" class="ui-widget-content ui-state-default">
+  <h4 class="ui-widget-header">S'more Items</h4>
+</div>
+<table id="makesmoretable">
+	<tr>
+		<td align="center">
+			<img id="makesmore" name="makesmore" src="images/iconcampfire.png" height="100px"> 
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<br>
+			<input type="reset" id="reset" name="reset" value="Reset">
+		</td>
+	</tr>
+</table>
+</div
+		
+</div>
+	</body>
+</html>
