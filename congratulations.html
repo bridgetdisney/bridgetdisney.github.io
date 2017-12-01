@@ -18,6 +18,8 @@
 	    	$(document).ready(function() {
 	    		document.getElementById("title").innerHTML = getTitle();
 				document.getElementById("menu").innerHTML = getMenu("");
+				$("#largesmore").toggle("explode");
+				$("#largesmore").toggle("explode");
 	    	});
 	    </script>
 	</head>
@@ -26,7 +28,7 @@
 		<div id="menu"></div>
 		<div id="congrats">
         	<h2>Congratulations, you've just made a delicious virtual s'more!!</h2>
-        	<img src="images/smore.jpg" height="350">
+        	<img id="largesmore" src="images/smore.jpg" height="350">
         </div>
 	</body>
 </html>
