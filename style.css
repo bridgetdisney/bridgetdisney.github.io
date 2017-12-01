@@ -59,6 +59,9 @@ p {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
+.table td {
+	text-align: center;
+}
 #menu ul {
 	height: 25px;
     list-style-type: none;
