@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="jquery-3.2.1.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("");
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<div id="congrats">
+        	<h3>Thank you for submitting your comments. Unfortunately they won't go anywhere because that
+        		wasn't covered in the class. :-( </h3>
+        </div>
+	</body>
+</html>
