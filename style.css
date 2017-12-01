@@ -197,6 +197,7 @@ textarea {
 #commenttable td {
 	text-align: center;
 	padding: 0;	
+	width: 150px;
 }
 .black {
 	color: #111111;
