@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Ingredients");
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<h2 class="left">Step 2: Gather your ingredients and tools</h2>
+		<a href="assembly.html"><h4 class="right">Proceed to Step 3 ===></h4></a>
+		<br>
+		<table>
+			<tr>
+				<td>
+					<fieldset>
+						<legend>
+							Graham Crackers
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/crackersgraham.jpg" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset>
+						<legend>
+							Chocolate Bar
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/chocolatehershey.jpg" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<fieldset>
+						<legend>
+							Marshmallows
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/marshmallow.jpg" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset>
+						<legend>
+							Paper plate
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/paperplate.jpg" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<fieldset>
+						<legend>
+							Skewer
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/skewer.png" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset>
+						<legend>
+							Paper Towels
+						</legend>
+						<table>
+							<tr>
+								<td><img src="images/papertowels.jpg" height="90px"></td>
+								<td>You'll probably want a paper plate to assemble the s'more.</td>
+							</tr>
+						</table>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

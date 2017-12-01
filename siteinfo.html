@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+	Name:       index.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="title.js"></script>
+	    <script src="menu.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Site Info");
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<br>
+		This web site was created for a class at the University of Missouri. The purpose was to use JavaScript
+		and jQuery to make a useful tutorial. Images and icons used on this site are in the public domain. Most 
+		of the images, if not taken myself, come from:
+		<a href="http://www.pixabay.com">Pixabay</a> and <a href="https://www.gograph.com">GoGraph</a>.
+		<br><br>
+		<span class="black">Class and assignnment information:</span><br>
+		IS_LT 7356 Interactive Web Design with JavaScript<br>
+		Bridget Disney
+		bridget.disney@gmail.com
+		<br><br>
+		<span class="bold">Tutorial Topic:</span> Let's Make S'mores<br>
+		<span class="bold">Tutorial Description:</span> This tutorial takes you through the step by step process
+		to make delicious s'mores. You'll be able to choose from different heat
+		sources and cooking tools to create this wonderful campfire treat!
+		
+
+	</body>
+</html>

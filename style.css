@@ -4,20 +4,204 @@
  * Author:      Murache
  * Modified by: Bridget Disney (7 December 2017) for IS_LT 7356
  *              Created file
- */body {
+ */
+body {
 	font-family: 'Short Stack', Arial, Helvetica, sans-serif;
-	font-size: 24px;
-	margin: 0 auto;
-	padding: 20px;
-	width: 800px;
+	font-size: 16px;
+	margin: 0px 70px 0 70px;
+	padding: 0px;
 	color: brown;
-	border: 3px solid brown;
+}
+h1 {
+	text-align: center;
+	font-size: 52px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
 }
 h2 {
-	margin: 0;
+	margin-top: 10px;
 	padding-bottom: .3em;
+}
+.left {
+	width="50%";
+	float: left;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 25px;
+}
+.right {
+	width="50%"
+	float: right;
+	text-align: right;
+}
+#start {
+	text-align: center;
+}
+#start a {
+	text-decoration: none;
+	color: brown;
+}
+#start a:hover {
+	color: red;
 }
 p {
 	margin: 0;
 	padding-bottom: 1em;
+}
+#menu-outer {
+	height: 25px;
+	background:brown;
+	margin: 0;
+}
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+#menu ul {
+	height: 25px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: brown;
+    padding-top: 0;
+    margin-top: 0;
+}
+li {
+    float: left;
+    background-color: brown;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+li a:hover {
+    color: yellow;
+}
+li.active {
+	background-color: #111111;
+	padding-right: 0;
+	padding-left: 0;
+}
+#photos {
+	text-align: center;
+	margin-top: 20px;
+}
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+}
+legend {
+    color: blue;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em;
+}
+label {
+	float: left;
+    width: 90px;
+}
+p {
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+#submit {
+	margin-left: 0;
+	width: 10em;
+}
+label.error {
+	float: none;
+	color: red;
+	font-size: 87.5%;
+}
+#virtualingredients { float: left; width: 400px; min-height: 12em; background: #ffffff; }
+.virtualingredients.custom-state-active { background: #eee; }
+.virtualingredients.ui-state-helper { background: lightgrey; }
+.virtualingredients li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.virtualingredients li h5 { margin: 0 0 0.4em; cursor: move; }
+.virtualingredients li a { float: right; }
+.virtualingredients li a.ui-icon-zoomin { float: left; }
+.virtualingredients li img { width: 100%; cursor: move; }
+ 
+#virtualbox { float: left; width: 250px; min-height: 18em; padding: 1%; } 
+#virtualbox h4 { line-height: 16px; margin: 0 0 0.4em; }
+#virtualbox h4 .ui-icon { float: left; }
+#virtualbox .gallery h5 { display: none; }
+
+#makesmoretable { 
+	padding-left: 80px;
+	padding-top: 45px;
+}
+
+fieldset {
+	color: blue;
+	margin-top: 0;
+	padding-top: 0;
+	box-sizing: border-box;
+}
+legend {
+	font-size: 20px;
+}
+a {
+	color: green;
+}
+a:hover {
+	color: red;
+}
+video {
+	padding-top: 30px;
+}
+#congrats {
+	text-align: center;
+}
+#reset, #submit {
+	width: 100px;
+	background: moccasin;
+	text-align: center;
+}
+#virtualsmore {
+	margin-left: 4em;
+}
+#commentfieldset {
+	width: 75%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+label {
+	width: 200px;
+	padding right: 25px;
+}
+textarea {
+	margin-left: 0px;
+	width: 500px;
+	height: 100px;
+}
+#submitcomments {
+	text-align: center;
+	margin-top: 15px;
+}
+#commenttable {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#commenttable td {
+	text-align: center;
+	padding: 0;	
+}
+.black {
+	color: #111111;
+	font-weight: bold;
+}
+.bold {
+	font-weight: bold;
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+	Name:       comments.html
+	Purpose:    Application for tutorial on how to make s'mores
+	Author:     Bridget Disney
+	Created:	7 Dec 2017 	
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Short+Stack">
+		<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	    <script src="jquery.validate.min.js"></script>
+		<script src="additional-methods.min.js"></script>
+		<script src="title.js"></script>	
+	    <script src="menu.js"></script>
+	    <script src="postcomment.js"></script>
+	    <script>
+	    	$(document).ready(function() {
+	    		document.getElementById("title").innerHTML = getTitle();
+				document.getElementById("menu").innerHTML = getMenu("Comments");
+				$('#reset').click(function() {location.reload();});
+	    	});
+	    	function showAlert() {
+	    		var validator = $("#comment_form").validate();
+	    		if (validator.form()) {
+					alert("Your comment has been validated and received.");
+				}
+			}
+	    </script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="menu"></div>
+		<form action="comments.html" method="post" enctype="text/plain" onsubmit="showAlert()"
+			name="comment_form" id="comment_form">
+			<fieldset id="commentfieldset">
+				<legend>Post your comment here:</legend>
+	    		<label for="name">Name:</label>
+	    		<input type="text" id="name" name="name"><br>
+	    		<label for="phone">Phone:</label>
+			    <input type="text" name="phone" id="phone" placeholder="999-999-9999"><br>
+	    		<label for="email">Email:</label>
+	    		<input type="text" id="email" name="email"><br><br>
+	    		<label for="comment">Comment:</label>
+	    		<textarea id="comment" name="comment"></textarea><br>
+	    		<label>How would you rate your s'more experience?</label>
+	    		<table id="commenttable">
+	    			<tr>
+	    				<td width="150px">Great</td>
+	    				<td width="150px">So-So</td>
+	    				<td width="150px">Could be better</td>
+	    			</tr>
+	    			<tr>
+	    				<td>
+	    					<input type="radio" name="rating" id="rating" checked>
+	    				</td>
+	    				<td width="150px">
+	    					<input type="radio" name="rating" id="rating">
+	    				</td>
+	    				<td width="150px">
+	    					<input type="radio" name="rating" id="rating">
+	    				</td>
+	    			</tr>
+	    		</table>
+			</fieldset>
+			<div id="submitcomments">
+				<input type="submit" id="submit" name="submit" value="Submit">
+				<input type="reset" id="reset" name="reset" value="Reset">
+			</div>
+		</form>
+	</body>
+</html>
