@@ -7,6 +7,7 @@
 $(document).ready(function() {
 	$("name").focus();
 	
+	// Set the rules for the validation plugin
 	$("#comment_form").validate({
 		rules: {
 			name: {

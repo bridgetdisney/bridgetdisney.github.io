@@ -21,8 +21,9 @@
 	    	$(document).ready(function() {
 	    		document.getElementById("title").innerHTML = getTitle();
 				document.getElementById("menu").innerHTML = getMenu("Virtual S'more");
-	    	}); // end ready
+	    	}); // end document ready
 	    	
+	    	// Functions used for drag and drop
 	    	$(function() {
  
     			// There's the virtualingredients and the virtualbox
@@ -52,9 +53,8 @@
      				drop: function( event, ui) {recycleImage( ui.draggable);}
     			}); // end virutalingredients droppable
     		
-    			// Image deletion function
-    			function deleteImage($item) {
-    				
+    			// Image deletion function - moves the chosen object into the box
+    			function deleteImage($item) {    				
       				$item.fadeOut(function() {
         				var $list = $( "ul", $virtualbox ).length ? $( "ul", $virtualbox) :
         							$( "<ul class='virtualingredients ui-helper-reset'/>").appendTo($virtualbox);
@@ -63,10 +63,9 @@
           					$item.animate({width: "48px" }).find("img").animate({ height: "36px"});
           				}); // end item fadein
         			}); // end item fadeout
-        			
-     		 	} // end delete image
+        		} // end delete image
      		 	
-    			// Image recycle function
+    			// Image recycle function - removes the chosen object from the box
     			function recycleImage($item) { 
       				$item.fadeOut(function() {
         				$item.find("a.ui-icon-refresh").remove().end().css( "width", "96px")
@@ -75,49 +74,53 @@
       				}); // end item fadeout
     			} // end recycle image
  
-    // Resolve the icons behavior with event delegation
-    $( "ul.virtualingredients > li" ).on( "click", function( event ) {
-      var $item = $( this ),
-        $target = $( event.target );
+    			// Resolve the object's behavior with event delegation
+    			$( "ul.virtualingredients > li" ).on( "click", function( event ) {
+      				var $item = $( this ),
+        			$target = $( event.target );
  
-      if ( $target.is( "a.ui-icon-virtualbox" ) ) {
-        deleteImage( $item );
-      } else if ( $target.is( "a.ui-icon-refresh" ) ) {
-        recycleImage( $item );
-      } // end if/else
+      				if ( $target.is( "a.ui-icon-virtualbox" ) ) {
+       			 		deleteImage( $item );
+     				} else if ( $target.is( "a.ui-icon-refresh" ) ) {
+        				recycleImage( $item );
+      				} // end if/else
  
-      return false;
-    }); // end ul.virtualingredients
+      				return false;
+    			}); // end ul.virtualingredients
     
-$('#reset').click(function() {location.reload();});
-$('#makesmore').click(function() { 
-	var found = 0;
-	var n = $("#virtualbox .ui-widget-content").length; 
-	if (n != 4) {
-		alert("You need exactly 4 items to make a virtual s'more.");
-	} else {
-		$("#virtualbox .ui-widget-content").each(function() {
-			if (this.firstChild.nextSibling.id == 'bar') {
-				found++;
-			}
-			if (this.firstChild.nextSibling.id == 'graham') {
-				found++;
-			}
-			if (this.firstChild.nextSibling.id == 'marshmallow') {
-				found++;
-			}
-			if (this.firstChild.nextSibling.id == 'skewer' || this.firstChild.nextSibling.id == "skewersticks") {
-				found++;
-			}
-		}); // end each
-		if (found == 4) {
-			location.href = "congratulations.html";
-		} else {
-			alert("You need different ingredients. Please try again!");
-		}
-	} // end else
-  }); // end make smore click
-}); // end document ready
+				// Reset button
+				$('#reset').click(function() {location.reload();});
+				
+				// Determine if correct s'more was made, s'more must have 4 objects that are correct
+				$('#makesmore').click(function() { 
+					var found = 0;
+					var n = $("#virtualbox .ui-widget-content").length; 
+					if (n != 4) {
+						alert("You need exactly 4 items to make a virtual s'more.");
+					} else {
+						$("#virtualbox .ui-widget-content").each(function() {
+							if (this.firstChild.nextSibling.id == 'bar') {
+								found++;
+							}
+							if (this.firstChild.nextSibling.id == 'graham') {
+								found++;
+							}
+							if (this.firstChild.nextSibling.id == 'marshmallow') {
+								found++;
+							}
+							if (this.firstChild.nextSibling.id == 'skewer' || this.firstChild.nextSibling.id == "skewersticks") {
+								found++;
+							}
+						}); // end each
+						
+						if (found == 4) {
+							location.href = "congratulations.html";
+						} else {
+							alert("You need different ingredients. Please try again!");
+						}
+					} // end else
+ 		 		}); // end make smore click
+			}); // end drag and drop functions
 	    </script>
 	</head>
 	<body>
@@ -126,8 +129,8 @@ $('#makesmore').click(function() {
 		<div id="virtualsmore">
 			<h3>Drag the correct images into the box and click the fire icon to make a virtual s'more.</h3>
 		
+			<!-- Display all of the objects that can be dragged into the box -->
 			<div class="ui-widget ui-helper-clearfix">
- 
 				<ul id="virtualingredients" class="virtualingredients ui-helper-reset ui-helper-clearfix">
   					<li class="ui-widget-content ui-corner-tr">
   		  				<img id="saltine" src="images/crackerssaltine.jpg" alt="Saltine Crackers" width="96" height="72">
@@ -167,9 +170,12 @@ $('#makesmore').click(function() {
   					</li>
 				</ul>
  
+ 				<!-- Define the box where the objects can be dropped -->
 				<div id="virtualbox" class="ui-widget-content ui-state-default">
   					<h4 class="ui-widget-header">S'more Items</h4>
 				</div>
+				
+				<!-- User clicks on these to initiate making the s'more or reset -->
 				<table id="makesmoretable">
 					<tr>
 						<td>

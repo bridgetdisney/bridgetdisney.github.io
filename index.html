@@ -22,6 +22,7 @@
 	    		document.getElementById("title").innerHTML = getTitle();
 				document.getElementById("menu").innerHTML = getMenu("Home");
 
+				// Use the Flickr API to display all of my photos labelled with the tag "more"
 				var url = "https://api.flickr.com/services/feeds/photos_public.gne?" +
 					"id=42492816@N06&format=json&jsoncallback=?&tags=more";	  
 				$.getJSON(url, function(data) {
@@ -32,11 +33,12 @@
 					$("#photos").html(html);
 				}); // end getJSON
 				
+				// Use an animation to emphasize "Start Here" link
 				$("#start a").hover(function(){
     				$(this).stop(true, false).animate({ fontSize: "200%" });
 				}, function() {
     				$(this).stop(true, false).animate({ fontSize: "100%" });
-				});
+				}); // end hover
 			}); // end ready
 	    </script>
 	</head>
@@ -48,14 +50,14 @@
 		<h2 id="start"><a href="heatsource.html"> *** Start Here*** </a></h2>
 		<fieldset id="indexfieldset">
 			<legend id="indexlegend">How to use this tutorial</legend>
-		<div>
-			<p>Jump right in by clicking *** Start Here *** for directions to make s'mores. This
-				will guide you through the steps of Heat Source, Ingredients, and Assembly Instructions.</p>
-			<p>The first three links after the home link (Heat Source, Ingredients, Assembly) walk you 
-			   through making an actual s'more. For fun, you can use the 5th link to create a virtual
-			   s'more. Submit a comment in the Comments section, and go to Site Info to
-			   find out more about this web site. </p>
-		</div>
+			<div>
+				<p>Jump right in by clicking *** Start Here *** for directions to make s'mores. This
+					will guide you through the steps of Heat Source, Ingredients, and Assembly Instructions.</p>
+				<p>The first three links after the home link (Heat Source, Ingredients, Assembly) walk you 
+			   		through making an actual s'more. For fun, you can use the 5th link to create a virtual
+			   		s'more. Submit a comment in the Comments section, and go to Site Info to
+			   		find out more about this web site. </p>
+			</div>
 		</fieldset>
 	</body>
 </html>
