@@ -1,3 +1,9 @@
+/*
+ * Name:        menu.js
+ * Purpose:     Provides menu support for tutorial appliclation
+ * Author:      Bridget Disney
+ * Created:		7 Dec 2017
+ */
 function getMenu(page) {
 	var menustring;
 	var menulist = {"Home": "index.html", 

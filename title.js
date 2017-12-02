@@ -1,3 +1,9 @@
+/*
+ * Name:        title.js
+ * Purpose:     Provides title support for tutorial appliclation
+ * Author:      Bridget Disney
+ * Created:		7 Dec 2017
+ */
 function getTitle() {
 	var titlestring;
 	
