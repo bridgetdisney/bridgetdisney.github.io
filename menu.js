@@ -14,7 +14,7 @@ function getMenu(page) {
 	                "Comments": "comments.html",
 	                "Site Info": "siteinfo.html"};
  
-	menustring = "<div id='menu-outer''><div class='table'><ul id='menu'>";
+	menustring = "<div id='menu-outer''><div class='menutable'><ul id='menu'>";
 	$.each(menulist, function(key, value) {
 		if (page == key) {
 			menustring += "<li class='active'><a href=" + value + ">" + key + "</li>";
