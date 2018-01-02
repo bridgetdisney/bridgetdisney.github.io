@@ -28,7 +28,6 @@
 	</head>
 	<body>
 		<h1>My Garden</h1>
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	</body>
 </html>
 	

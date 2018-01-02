@@ -1,0 +1,216 @@
+/*
+ * Name:        style.css
+ * Purpose:     Used as supporting css for tutorial application.
+ * Author:      Bridget Disney
+ * Created: 	7 December 2017
+ */
+body {
+	font-family: 'Short Stack', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0px 70px 0 70px;
+	padding: 0px;
+	color: brown;
+}
+h1 {
+	text-align: center;
+	font-size: 52px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+h2 {
+	margin-top: 10px;
+	padding-bottom: .3em;
+}
+p {
+	margin: 0;
+	padding-bottom: 1em;
+}
+p {
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+table td {
+	text-align: center;
+}
+fieldset {
+	color: blue;
+	margin-top: 0;
+	padding-top: 0;
+	box-sizing: border-box;
+}
+legend {
+	font-size: 20px;
+}
+a {
+	color: green;
+}
+a:hover {
+	color: red;
+}
+/*
+ * CSS for menus 
+ */
+#menu-outer {
+	height: 25px;
+	background:brown;
+	margin: 0;
+}
+#menu ul {
+	height: 25px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: brown;
+    padding-top: 0;
+    margin-top: 0;
+}
+.menutable {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+li {
+    float: left;
+    background-color: brown;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+li a:hover {
+    color: yellow;
+}
+li.active {
+	background-color: #111111;
+	padding-right: 0;
+	padding-left: 0;
+}
+/* 
+ * CSS for index page
+ */
+#start {
+	text-align: center;
+}
+#start a {
+	text-decoration: none;
+	color: brown;
+}
+#start a:hover {
+	color: red;
+}
+#indexfieldset {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
+#indexlegend {
+	font-weight: bold;
+}
+#photos {
+	text-align: center;
+	margin-top: 20px;
+}
+/*
+ * CSS for heatsource, ingredients, and assembly
+ */
+.left {
+	width: 50%;
+	float: left;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 25px;
+}
+.right {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+video {
+	padding-top: 30px;
+}
+/*
+ * CSS for virtualsmore
+ */
+#virtualsmore {
+	margin-left: 4em;
+}
+#virtualingredients { float: left; width: 400px; min-height: 12em; background: #ffffff; }
+.virtualingredients.custom-state-active { background: #eee; }
+.virtualingredients.ui-state-helper { background: lightgrey; }
+.virtualingredients li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.virtualingredients li h5 { margin: 0 0 0.4em; cursor: move; }
+.virtualingredients li a { float: right; }
+.virtualingredients li a.ui-icon-zoomin { float: left; }
+.virtualingredients li img { width: 100%; cursor: move; } 
+#virtualbox { float: left; width: 250px; min-height: 18em; padding: 1%; } 
+#virtualbox h4 { line-height: 16px; margin: 0 0 0.4em; }
+#virtualbox h4 .ui-icon { float: left; }
+#virtualbox .gallery h5 { display: none; }
+#makesmoretable { 
+	margin-left: 50px;
+	padding-left: 80px;
+	padding-top: 45px;
+}
+#congrats {
+	text-align: center;
+}
+/*
+ * CSS for comments
+ */
+label {
+	float: left;
+	width: 200px;
+	padding-right: 25px;
+}
+label.error {
+	float: none;
+	color: red;
+	font-size: 87.5%;
+}
+textarea {
+	margin-left: 0px;
+	width: 500px;
+	height: 100px;
+}
+#reset, #submit {
+	width: 100px;
+	background: moccasin;
+	text-align: center;
+}
+#commentfieldset {
+	width: 75%;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+#submitcomments {
+	text-align: center;
+	margin-top: 15px;
+}
+#commenttable {
+	margin-left: 30px;
+	margin-top: 10px;
+}
+#commenttable td {
+	text-align: center;
+	padding: 0;	
+	width: 150px;
+}
+/*
+ * CSS for siteinfo
+ */
+.black {
+	color: #111111;
+	font-weight: bold;
+}
+.bold {
+	font-weight: bold;
+}
