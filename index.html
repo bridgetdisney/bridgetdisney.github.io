@@ -33,7 +33,7 @@ var colorScale = d3.scaleThreshold()
 // Load external data and boot
 d3.queue()
   .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-  .defer(d3.csv, "./Immunization-estimates-2018/BCG-Table 1.csv", function(d) { data.set(d.country, +d.vaccine); })
+  .defer(d3.csv, "https://bridgetdisney.github.io/data.BCG.csv", function(d) { data.set(d.country, +d.vaccine); })
   .await(ready);
 
 function ready(error, topo) {
