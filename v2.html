@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title>Vaccinations 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <table><tr>
+    <td id="title"><a href="v.html">BCG Vaccine and COVID-19 Immunity</a><br>
+      <span style="color:#bebebe;font:16px sans-serif;">(BCG Vaccine by Country)</span></td>
+    <td id="leftarrow">
+      <a href="v1.html"><img src="images/previous.png" height="50px" title="Previous Page"></a>
+    </td><td style="width:350px">
+      <a href="v1.html"><img src="images/v1.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+      <img src="images/v2.png" style="height:70px;width:100px;border:5px solid navy;">
+      <a href="v3cases.html"><img src="images/v3.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+    </td><td id="rightarrow">
+      <a href="v3cases.html"><img src="images/next.png" height="50px" title="Next Page"></a>
+    </td>
+  </table>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Initialize a select button -->
+<select id="selectButton"></select>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<script>
+
+var color = d3.scaleOrdinal()
+    .range(["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd","#ccebc5","#ffed6f"]);
+    //.range(["#8acb88","#648381","#575761","#567e7d","#843b62","#0b032d","#2b2d42","#8d99ae","#ef233c","#bbbe64","#coc5c1","#1d8491"]);
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 30, bottom: 40, left: 160},
+    width = 760 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+d3.csv("https://bridgetdisney.github.io/data/bcgchart.csv",
+
+  // Now I can use this dataset:
+  function(data) {
+
+// List of groups (here I have one group per column)
+   var allGroup = ["Afghanistan", "Albania", "Algeria","Angola","Argentina","Armenia","Austria","Azerbaijan","Bangladesh","Belarus","Belize","Benin","Bhutan","Bolivia (Plurinational State of)","Bosnia and Herzegovina","Botswana","Brazil","Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia",
+   "Cameroon","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Cook Islands","Costa Rica","Cote d'Ivoire","Croatia","Cuba","Czechia",
+   "Democratic People's Republic of Korea","Democratic Republic of the Congo","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Ghana","Greece","Guatemala","Guinea","Guinea-Bissau",
+   "Guyana","Haiti","Honduras","Hungary","India","Indonesia",
+   "Iran (Islamic Republic of)","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Lao People's Democratic Republic","Latvia","Lesotho","Liberia","Libya","Lithuania","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta",
+   "Marshall Islands","Mauritania","Mauritius","Mexico",
+   "Micronesia (Federated States of)","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Nicaragua","Niger","Nigeria","Niue","Oman","Pakistan","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Republic of Korea","Republic of Moldova","Republic of North Macedonia","Romania","Russian Federation","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa",
+   "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Sudan","Sri Lanka","State of Palestine","Sudan","Sweden","Syrian Arab Republic","Tajikistan","Thailand","Timor-Leste","Togo","Tonga","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Republic of Tanzania","Uruguay","Uzbekistan","Vanuatu","Venezuela (Bolivarian Republic of)",
+   "Viet Nam","Yemen","Zambia","Zimbabwe"]
+
+   // add the options to the button
+   d3.select("#selectButton")
+     .selectAll('myOptions')
+     .data(allGroup)
+     .enter()
+     .append('option')
+     .text(function (d) { return d; }) // text showed in the menu
+     .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+   // Add X axis --> it is a date format
+   var x = d3.scaleLinear()
+     .domain([1980, 2018])
+     .range([ 0, width ]);
+   svg.append("g")
+     .attr("transform", "translate(0," + height + ")")
+     .call(d3.axisBottom(x).tickFormat(d3.format("d")));
+
+     // text label for the x axis
+   svg.append("text")
+       .attr("transform",
+             "translate(" + (width/2+30) + " ," +
+                            (height + margin.top + 20) + ")")
+       .style("text-anchor", "middle")
+       .text("Year");
+
+   // Add Y axis
+   var y = d3.scaleLinear()
+     .domain( [0,100])
+     .range([ height, 0 ]);
+   svg.append("g")
+     .call(d3.axisLeft(y));
+
+  // text label for the y axis
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 60 - margin.left)
+    .attr("x", 0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Percent BCG");
+
+   // Initialize line with group a
+   var line = svg
+     .append('g')
+     .append("path")
+       .datum(data)
+       .attr("d", d3.line()
+         .x(function(d) { return x(+d.time) })
+         .y(function(d) { return y(+d.Afghanistan) })
+       )
+       .attr("stroke", function(d){ return color("Afghanistan") })
+       .style("stroke-width", 4)
+       .style("fill", "none")
+
+   // A function that update the chart
+   function update(selectedGroup) {
+
+     // Create new data with the selection?
+     var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
+
+     // Give these new data to update line
+     line
+         .datum(dataFilter)
+         .transition()
+         .duration(1000)
+         .attr("d", d3.line()
+           .x(function(d) { return x(+d.time) })
+           .y(function(d) { return y(+d.value) })
+         )
+         .attr("stroke", function(d){ return color(selectedGroup) })
+   }
+
+   // When the button is changed, run the updateChart function
+   d3.select("#selectButton").on("change", function(d) {
+       // recover the option that has been chosen
+       var selectedOption = d3.select(this).property("value")
+       // run the updateChart function with this selected option
+       update(selectedOption)
+   })
+
+})
+
+
+</script>
+</body>
+</html>

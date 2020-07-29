@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <title>Vaccinations 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 38px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #fff;
+    border: 0px;
+    pointer-events: none;
+}
+.line {
+    stroke: #E4002B;
+    fill: none;
+    stroke-width: 3;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.text-label {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.dot {
+    stroke: #293b47;
+    fill: #7A99AC
+}
+</style>
+<body>
+  <table><tr>
+    <td id="title"><a href="v.html">BCG Vaccine and COVID-19 Immunity</a><br>
+      <span style="color:#bebebe;font:16px sans-serif;">(BCG Vaccine and COVID-19 Deaths)</span></td>
+    <td id="leftarrow">
+      <a href="v2.html"><img src="images/previous.png" height="50px" title="Previous Page"></a>
+    </td><td style="width:350px">
+      <a href="v1.html"><img src="images/v1.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+      <a href="v2.html"><img src="images/v2.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+      <img src="images/v3.png" style="height:70px;width:100px;border:5px solid navy;">
+    </td><td id="rightarrow">
+      <img src="images/next.png" height="50px" title="Next Page" style="opacity:0.1;">
+    </td>
+  </table>
+  <br><br>
+  <table style="width:350px;margin-left:250px;"><tr><td style="width:200px;">
+  <form action="v3cases.html">
+    <input type="radio" onchange='this.form.submit();' id="cases">
+    <label for="cases">Cases</label>
+  </form>
+</td><td style="width:200px;">
+<form action="v3deaths.html">
+  <input type="radio" onchange='this.form.submit();' checked>
+  <label for="deaths">Deaths</label>
+</form>
+</td></tr>
+</table>
+
+<svg id="my_dataviz" width="1200" height="800"></svg>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+
+<script>
+
+var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 30, bottom: 40, left: 160},
+    width = 760 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Load external data and boot
+//Read the data
+d3.csv("https://bridgetdisney.github.io/data/combined.csv",
+  function(data) {
+
+
+  // Add X axis
+  var x = d3.scaleLog()
+    .domain([1, 1000000])
+    .range([ 0, width]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).ticks(6).tickFormat(d3.format(".0s")));
+
+    // text label for the x axis
+  svg.append("text")
+      .attr("transform",
+            "translate(" + (width/2 + 25) + " ," +
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("COVID-19 Deaths");
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([0, 100])
+    .range([ height, 0]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+    // text label for the y axis
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 60 - margin.left)
+      .attr("x", 0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Percent BCG");
+
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.totaldeaths); } )
+      .attr("cy", function (d) { return y(d.avg); } )
+      .attr("r", 3.5)
+      .style("fill", "#69b3a2")
+      .on("mouseover", function(d) {
+          tooltip.transition()
+          .duration(200)
+          .style("opacity", .9);
+          tooltip.html(d.country + "\nAverage Percent of BCG Vaccine:" + d.avg + "\nCOVID-19 Deaths:" + d.totaldeaths)
+          .style("left", (d3.event.pageX) + "px")
+          .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+          tooltip.transition()
+          .duration(500)
+          .style("opacity", 0);
+        });
+
+    })
+
+</script>
+</body>
+</html>

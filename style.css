@@ -1,0 +1,66 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+  background-color: #0e73aa; //#c5e2f3;
+}
+
+div {
+  background-color: #0e73aa;
+}
+
+p {
+  margin: 100px;
+}
+table{
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+td {
+  background-color: #0e73aa;
+  vertical-align: middle;
+  text-align: center;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#title {
+  color: #ffffff;
+  font-size: 21px;
+}
+#rightarrow {
+  text-align: left;
+}
+#leftarrow {
+  text-align: right;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 54px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #f5f2d0;
+    border: 0px;
+    pointer-events: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: lightgray;
+}
+a:visited, a:active, a:selected, a:link {
+  color: white;
+}
+select {
+  position: relative;
+  background-color: lightblue;
+  height: 30px;
+  font 12px sans-serif;
+  margin-left: 120px;
+  margin-top: 50px;
+}
