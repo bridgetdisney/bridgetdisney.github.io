@@ -7,7 +7,7 @@
 </head>
 <body>
   <table><tr>
-    <td id="title"><a href="v.html">BCG Vaccine and COVID-19 Immunity</a><br>
+    <td id="title"><a href="index.html">BCG Vaccine and COVID-19 Immunity</a><br>
       <span style="color:#bebebe;font:16px sans-serif;">(BCG Vaccine by Country)</span></td>
     <td id="leftarrow">
       <a href="v1.html"><img src="images/previous.png" height="50px" title="Previous Page"></a>
@@ -147,8 +147,11 @@ d3.csv("https://bridgetdisney.github.io/data/bcgchart.csv",
    })
 
 })
-annot(svg, 700, 450, 0, 0, 0, 0,
+annot(svg, 600, 550, 0, 0, 0, 0,
   "Countries are usually not consistent in their use of the BCG vaccine");
+
+annot(svg, 700, 155, 0, 0, 0, 0,
+  "Countries that have not used the BCG vaccine since 1980 are not shown");
 
 </script>
 </body>

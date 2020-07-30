@@ -3,15 +3,18 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial;
-  background-color: #0e73aa; //#c5e2f3;
+  background-color: #0e73aa;
 }
-
+h2 {
+  text-align: center;
+}
 div {
   background-color: #0e73aa;
 }
-
 p {
-  margin: 100px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 table{
   width: 100%;
@@ -25,6 +28,18 @@ td {
   border: 0;
   padding-top: 10px;
   padding-bottom: 5px;
+}
+#bcgmap {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mapreference {
+  display: block;
+  margin-top: 3px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font: 9px sans-serif;
 }
 #title {
   color: #ffffff;
