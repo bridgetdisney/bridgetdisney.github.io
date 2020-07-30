@@ -1,59 +1,30 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-
-<h2>Do past vaccines affect COVID-19 immunity?</h2>
-
-<!-- Create an element where the map will take place -->
-<svg id="my_dataviz" width="1200" height="900"></svg>
-<script>
-
-// The svg
-var svg = d3.select("svg"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
-
-// Map and projection
-var path = d3.geoPath();
-var projection = d3.geoMercator()
-  .scale(110)
-  .center([0,20])
-  .translate([width / 2, height / 2]);
-
-// Data and color scale
-var data = d3.map();
-var colorScale = d3.scaleThreshold()
-  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-  .range(d3.schemeBlues[7]);
-
-// Load external data and boot
-d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-  .defer(d3.csv, "https://bridgetdisney.github.io/data.BCG.csv", function(d) { data.set(d.country, +d.vaccine); })
-  .await(ready);
-
-function ready(error, topo) {
-
-  // Draw the map
-  svg.append("g")
-    .selectAll("path")
-    //.data(topo.features)
-    .enter()
-    .append("path")
-      // draw each country
-      .attr("d", d3.geoPath()
-        .projection(projection)
-      )
-      // set the color of each countryv
-      .attr("fill", "green");
-      //function (d) {
-      //  d.total = data.get(d.id) || 0;
-      //  return colorScale(d.total);
-      //});
-    }
-
-</script>
+<html>
+<head>
+  <title>Vaccinations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table><tr>
+  <td id="title">BCG Vaccine and COVID-19 Immunity<br>
+    <span style="color:#bebebe;font:16px sans-serif;">(Home)</span></td>
+  <td id="leftarrow">
+    <img src="images/previous.png" height="50px" title="Previous Page" style="opacity:0.1;">
+  </td><td style="width:350px">
+    <a href="v1.html"><img src="images/v1.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+    <a href="v2.html"><img src="images/v2.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+    <a href="v3cases.html"><img src="images/v3.png" style="height:70px;width:100px;border:5px solid #0e73aa;"></a>
+  </td><td id="rightarrow">
+    <a href="v1.html"><img src="images/next.png" height="50px" title="Next Page"></a>
+  </td>
+</table>
+<p>
+  In the age of COVID-19, scientists have been studying existing factors that may
+  or may not contribute its spread and effects.
+</p>
+<p>
+  This web site provides three visualizations (scenes) to show the data used for this analysis.
+</p>
+</body>
+</html>
