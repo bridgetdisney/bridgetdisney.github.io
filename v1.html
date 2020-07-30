@@ -20,6 +20,7 @@
   </table>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
+<script src="annot.js"></script>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -37,7 +38,7 @@ var tooltip = d3.select("body").append("div")
 
 // set the dimensions and margins of the graph
 var margin = {top: -80, right: 0, bottom: 0, left: 25},
-    width = 900, // - margin.left - margin.right,
+    width = 1100, // - margin.left - margin.right,
     height = 900 - margin.bottom,
     barHeight = height / 3 - 40;
     innerRadius = 0,
@@ -56,8 +57,6 @@ d3.csv("https://bridgetdisney.github.io/data/combined.csv", function(data) {
   data.sort(function(x, y){
    return d3.ascending(x.avg, y.avg);
   })
-
-
 
 var keys = data.map(function(d,i) { return d.country; });
 var numBars = keys.length;
@@ -140,6 +139,9 @@ var numBars = keys.length;
             .duration(500)
             .style("opacity", 0);
           })
+
+          annot(svg, 900, 150, 45, -160, 324, -267,
+            "These countries have not used the BCG vaccine since at least 1980");
 
 });
 (function(global, factory) {

@@ -7,15 +7,7 @@
 </head>
 <style>
 div.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 100px;
-    height: 38px;
-    padding: 2px;
-    font: 12px sans-serif;
-    background: #fff;
-    border: 0px;
-    pointer-events: none;
+  height: 95px;
 }
 .line {
     stroke: #E4002B;
@@ -77,6 +69,7 @@ div.tooltip {
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
+<script src="annot.js"></script>
 
 <!-- Create a div where the graph will take place -->
 
@@ -88,8 +81,8 @@ var tooltip = d3.select("body").append("div")
 
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 30, bottom: 40, left: 160},
-    width = 760 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 1060 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -163,7 +156,8 @@ d3.csv("https://bridgetdisney.github.io/data/combined.csv",
         });
 
     })
-
+    annot(svg, 200, 525, 0, 0, 0, 0,
+      "There are more cases that deaths, but both show a slight negative correlation.");
 </script>
 </body>
 </html>

@@ -28,7 +28,7 @@ td {
 }
 #title {
   color: #ffffff;
-  font-size: 21px;
+  font-size: 25px;
 }
 #rightarrow {
   text-align: left;
@@ -46,6 +46,17 @@ div.tooltip {
     background: #f5f2d0;
     border: 0px;
     pointer-events: none;
+}
+div.annotation {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 65px;
+  padding: 2px;
+  font: 16px sans-serif;
+  background: lightblue;
+  border: 0px;
+  pointer-events: none;
 }
 a {
   text-decoration: none;

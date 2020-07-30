@@ -21,6 +21,7 @@
   </table>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
+<script src="annot.js"></script>
 
 <!-- Initialize a select button -->
 <select id="selectButton"></select>
@@ -36,8 +37,8 @@ var color = d3.scaleOrdinal()
 
 // set the dimensions and margins of the graph
 var margin = {top: 20, right: 30, bottom: 40, left: 160},
-    width = 760 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -146,7 +147,8 @@ d3.csv("https://bridgetdisney.github.io/data/bcgchart.csv",
    })
 
 })
-
+annot(svg, 700, 450, 0, 0, 0, 0,
+  "Countries are usually not consistent in their use of the BCG vaccine");
 
 </script>
 </body>
