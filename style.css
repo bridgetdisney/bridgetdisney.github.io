@@ -72,7 +72,7 @@ div.annotation {
   height: 65px;
   padding: 2px;
   font: 16px sans-serif;
-  background: lightblue;
+  background-color: #FFDEAD;
   border: 0px;
   pointer-events: none;
 }
