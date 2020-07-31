@@ -16,6 +16,9 @@ p {
   margin-left: 100px;
   margin-right: 100px;
 }
+img:hover {
+  opacity: .9;
+}
 table{
   width: 100%;
   border: 0;
