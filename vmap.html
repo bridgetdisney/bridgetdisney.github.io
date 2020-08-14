@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head><title>Vaccinations 1</title></head>
+<style>
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 38px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #fff;
+    border: 0px;
+    pointer-events: none;
+}
+</style>
+<body>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://unpkg.com/d3-svg-legend@1.13.0/d3-legend.min.js"></script>
+<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<!-- Load d3-annotation -->
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
+
+<h2>Do past vaccines affect COVID-19 immunity?</h2>
+
+<!-- Create an element where the map will take place -->
+<svg id="my_dataviz" width="1200" height="800"></svg>
+<script>
+
+var format = d3.format("0.0f");
+
+// The svg
+var svg = d3.select("svg"),
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
+
+  //Define default colorbrewer scheme
+  var colorSchemeSelect = "BuPu";
+  var colorScheme = colorbrewer[colorSchemeSelect];
+
+  //define default number of quantiles
+  var quantiles = 5;
+
+  //Define quantile scale to sort data values into buckets of color
+  var color = d3.scaleQuantile()
+     .range(colorScheme[quantiles]);
+
+  // Features of the annotation
+  const annotations = [
+    {
+      note: {
+        label: "North America has not used this vaccine after 1980",
+        title: "Note:"
+      },
+      x: 400,
+      y: 300,
+      dy: -150,
+      dx: -200
+    }
+  ]
+
+
+// tooltip
+var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+//legend
+var legend = svg.selectAll('g.legendEntry')
+    .data(color.range())
+    .enter()
+    .append('g').attr('class', 'legendEntry');
+
+legend
+    .append('rect')
+    .attr("x", width - 1080)
+    .attr("y", function(d, i) {
+       return 400 + (i * 20);
+    })
+   .attr("width", 10)
+   .attr("height", 20)
+   .style("stroke", "black")
+   .style("stroke-width", 1)
+   .style("fill", function(d){return d;});
+       //the data objects are the fill colors
+
+legend
+    .append('text')
+    .attr("x", width - 1065) //leave 5 pixel space after the <rect>
+    .attr("y", function(d, i) {
+       return 400 + (i * 20);
+    })
+    .attr("dy", "0.8em") //place text one line *below* the x,y point
+    .text(function(d,i) {
+        return "> " + (i * 20) + "%";
+    });
+
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoMercator()
+  .scale(110)
+  .center([0,20])
+  .translate([width / 2, height / 2]);
+
+// Data and color scale
+var data = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([0, 20, 40, 60, 80, 100])
+  .range(d3.schemeBuPu[7]);
+
+// Load external data and boot
+
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  .defer(d3.csv, "https://bridgetdisney.github.io/data/BCG.csv", function(d) {
+    alldata = +d.a2018 + +d.a2017 + +d.a2016 + +d.a2015 + +d.a2014 + +d.a2013 + +d.a2012 + +d.a2011
+      + +d.a2010 + +d.a2009 + +d.a2008 + +d.a2007 + +d.a2006 + +d.a2005 + +d.a2004 + +d.a2003
+      + +d.a2002 + +d.a2001 + +d.a2000 + +d.a1999 + +d.a1998 + +d.a1997 + +d.a1996 + +d.a1997
+      + +d.a1996 + +d.a1995 + +d.a1994 + +d.a1993 + +d.a1992 + +d.a1991 + +d.a1990 + +d.a1989
+      + +d.a1988 + +d.a1987 + +d.a1986 + +d.a1985 + +d.a1984 + +d.a1983 + +d.a1982 + +d.a1981
+      + +d.a1980;
+    data.set(d.iso3, alldata/41); })
+  .await(ready);
+
+
+
+  function ready(error, topo) {
+    // Draw the map
+    svg.append("g")
+      .selectAll("path")
+      .data(topo.features)
+      .enter()
+      .append("path").style("stroke-width", 0.5).style("stroke", "black")
+
+        // draw each country
+        .attr("d", d3.geoPath()
+          .projection(projection)
+
+        )
+
+        // set the color of each country
+        .attr("fill", function (d) {
+          d.total = data.get(d.id) || 0;
+          //alert(d.total)
+          return colorScale(d.total);
+        })
+        .on("mouseover", function(d) {
+            tooltip.transition()
+            .duration(200)
+            .style("opacity", .9);
+            tooltip.html(d.properties.name + " : " + format(d.total) + "%")
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+          })
+          .on("mouseout", function(d) {
+            tooltip.transition()
+            .duration(500)
+            .style("opacity", 0);
+          });
+          // Add annotation to the chart
+        const makeAnnotations = d3.annotation()
+          .annotations(annotations)
+        d3.select("svg")
+          .append("g")
+          .call(makeAnnotations)
+      }
+
+</script>
+</body>
+</html>
