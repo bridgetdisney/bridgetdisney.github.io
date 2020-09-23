@@ -1,0 +1,171 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Montserrat";
+  width: 100%;
+  background-color: #ffffff;
+}
+#topdiv {
+  text-align: right;
+  background-color: #333333;
+  height: 35px;
+}
+#headerdiv {
+  background-color: #455968;
+  font-size: 26px;
+  color: #ffffff;
+  height: 60px;
+}
+#myname {
+  float: left;
+  margin-left: 100px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-stretch: expanded;
+}
+#nav {
+  font-size: 14px;
+  margin-left: 200px;
+  margin-top: 23px;
+  float: left;
+}
+#navlink {
+  display: inline;
+  padding-right: 45px;
+}
+#navlinkselected{
+  color: black;
+  padding-right: 45px;
+  font-weight:900;
+}
+h2 {
+  text-align: center;
+}
+h4 {
+  text-align: left;
+  margin-left: 25px;
+}
+div {
+  background-color: #333333;
+}
+div.residency {
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+div.courses {
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+#imagediv, #researchdiv {
+  width: 90%;
+  background-color: #ffffff;
+  text-align: justify;
+}
+#residencydiv {
+  margin-left: 50px;
+  background-color: #ffffff;
+}
+#coursesdiv {
+  margin-left: 50px;
+  background-color: #ffffff;
+}
+#coursesdoctoral, #coursesresearch, #coursesminor, #coursesislt {
+  background-color: #ffffff;
+}
+p {
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.indent {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.photoimg {
+  float: right;
+  margin: 10px;
+}
+img:hover {
+  opacity: .9;
+}
+table{
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+td {
+  background-color: #0e73aa;
+  vertical-align: top;
+  text-align: left;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#bcgmap {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mapreference {
+  display: block;
+  margin-top: 3px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font: 9px sans-serif;
+}
+#title {
+  color: #ffffff;
+  font-size: 25px;
+}
+#rightarrow {
+  text-align: left;
+}
+#leftarrow {
+  text-align: right;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 54px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #f5f2d0;
+    border: 0px;
+    pointer-events: none;
+}
+div.annotation {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 65px;
+  padding: 2px;
+  font: 16px sans-serif;
+  background-color: #FFDEAD;
+  border: 0px;
+  pointer-events: none;
+}
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: lightgray;
+}
+a:hover {
+  color: yellow;
+}
+a:active {
+  color: black;
+  font-weight: bold;
+}
+select {
+  position: relative;
+  background-color: lightblue;
+  height: 30px;
+  font 12px sans-serif;
+  margin-left: 120px;
+  margin-top: 50px;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<head>
+  <title>Bridget's Portfolio</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+  $(document).ready(function() {
+    $("#coursesdiv").tabs();
+    $("#coursesdoctoral").accordion({
+      event: "click",
+      collapsible: true,
+      active:false,
+      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
+    });
+    /*
+    $("#coursesminor").accordion({
+      event: "click",
+      collapsible: true,
+      active:false,
+      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
+    });
+    $("#coursesislt").accordion({
+      event: "click",
+      collapsible: true,
+      active:false,
+      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
+    }); */
+  });
+  </script>
+</head>
+<body>
+  <div id="topdiv">
+    <img src="images/twitter.png" height="40px">
+    <img src="images/mail.png" height="40px">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+  <div id="headerdiv">
+    <span id="myname">BRIDGET DISNEY</span>
+    <span id="nav">
+      <span id="navlink"><a href="index.html">HOME</a></span>
+      <span id="navlink"><a href="roadmap.html">ROADMAP</a></span>
+      <span id="navlink"><a href="residency.html">RESIDENCY PLAN</a></span>
+      <span id="navlinkselected">COURSES</span>
+      <span id="navlink"><a href="cv.pdf" target="_blank">CV</a></span>
+    </span>
+  </div>
+<h2>Courses</h2>
+<div id="coursesdiv">
+  <ul>
+    <li><a href="#tabs-doctoral">Doctoral Seminars</a></li>
+    <li><a href="#tabs-research">Research</a></li>
+    <li><a href="#tabs-minor">Supporting Field</a></li>
+    <li><a href="#tabs-islt">ISLT</a></li>
+  </ul>
+  <div id="tabs-doctoral">
+    <div id="coursesdoctoral">
+    <h4>ISLT 9411: Design/Analysis of Research in ISLT</h4>
+    <div class="courses">
+      <img class="photoimg" src="images/research.jpg" height="25%">
+      <p>
+      This course walked us through the process of creating a research paper or proposal. I chose
+      to write a proposal to study how refugees could facilitate the exchange of technological
+      information among themselves using sociocultural theory postulated by Lev Vygotsky including
+      cultural mediation and the zone of proximity. The aim was
+      to study how the interpersonal interactions of refugess could ameliorate their situation.
+      </p><p>
+      Two things really surprised me while researching this paper. The first being the scope of
+      the refugee problem in the world (over 60 million refugees!), and the second being how much
+      information technology is valued. It was presented as a necessary commodity on par with food and
+      shelter.
+      </p>
+    </div>
+    <h4>ISLT 9411: Human Information Behavior</h4>
+    <div class="courses">
+      <img class="photoimg" src="images/infoseek.png" height="25%">
+      <p>
+      In this class we worked as a group to flesh out the practices and theories of information
+      seeking behavior. We each had to present on a topic and guide a class discusson on relevant
+      papers. My topic was on information needs, motivations, and use. The authors of one of the articles
+       we discussed (Spink and Cole, 2006) conceptualized how humans have sought information, including
+      (a) the everyday life information seeking–sense-making approach,
+      (b) the information foraging approach, and
+      (c) the problem–solution perspective on information seeking approach.
+      </p>
+      <p>
+      These ideas provided background for later in the class when we tried to map out the theories
+      of information behavior and apply them to our own research. This is where I began to tackle
+      the problem of how people search for datasets through data discovery. I started out with a
+      foraging theory but eventually switched to an examination of archival intelligence.
+      </p>
+      <p>
+        Spink, A., & Cole, C. (2006). Human information behavior: Integrating diverse approaches and
+        information use. <i>Journal of the American Society for information Science and Technology,
+        57</i>(1), 25-35.
+    </div>
+    <h4>ISLT 9411: Human Computer Interaction</h4>
+    <div class="courses">
+      <img class="photoimg" src="images/hci.jpg" height="15%">
+      <p>This course covered the multidisciplined topic of human computer interaction. We evaluated systems
+      design from a theoretical and usability perspective, studying concepts such as cognitive load, working
+      memory, and short/long term memory. An example that we examined in depth was the
+      ticketing machine to use the subway in Washington, D.C. It was interesting to see how that system
+      was helpful and hindering to visiting and long term patrons.
+      </p>
+      <p>
+      This lead me to collaborate with a fellow student on a paper that considered why people choose
+      one social media platform over another. We conducted open ended interviews with twelve people and
+      analyzed the results. It was my first experience with qualitative research and what impressed me
+      the most was the amount of work that is required to process in-person data.
+      </p>
+    </div>
+  </div>
+</div>
+<div id="tabs-research">
+  <div id="coursesresearch">
+    <h4>AG_ED_LD 8540: Qualitative Research</h4>
+    <div class="courses">
+      <p>
+        I took this course through the Agricultural Education department because I wanted a class that
+        was online. It was interesting to see qualitative research from this perspective. During the course,
+        I revisited the
+        previous paper I had done on social media, presenting it as a case study rather than
+        through a phenomenological lens. For a theory, I used &apos;uses and gratification&apos; instead of situated action
+        and activity theories. Two additional interviews were conducted for this project.
+      </p>
+    </div>
+    <h4>ESC_PC 8850: Quantitative Foundations</h4>
+    <div class="courses">
+      <p>
+        This course was a follow up to the basic statistics class covering methods such as linear regression and ANOVA
+        The theories were addresssed then we implemented them using the "R" programming language.
+      </p>
+    </div>
+      <h4>ESC_PC 8860: Statistical Data Management and Analysis</h4>
+      <div class="courses">
+        <p>
+        The focus for this course was data analysis using the "R" programming language. We concentrated on data
+        manipulation and the capabilities of the language and its packages.
+      </p>
+      </div>
+    </div>
+  </div>
+  <div id="tabs-minor">
+    These are courses in data science taken from the MSCS program at the University of Illinois.
+    <div id="coursesminor">
+      <h4>CS 410: Text Information Systems</h4>
+      <div class="courses">
+      <p>
+        I was particularly interested in this course and found it to helpful in my understanding of programmatic
+        text analysis. We discussed many topics including parts of speech tagging, PageRank algorithm (used by Google
+        search), and entropy. It also aided my understanding of the factors that influence text analysis like the term
+        frequency - inverse document frequency (TF-IDF).
+      </p>
+      </div>
+      <h4>CS 412: Introduction to Data Mining</h4>
+      <div class="courses">
+        <p>
+        This was a challenging course that covered data mining topics incuding pattern discovery, categorization and
+        cluster analysis. There are numerous methods for doing this for text and graph based data. It helped me
+        become aware of techniques used and gave me experience in implementing some of these methods in Python.
+      </p>
+      </div>
+      <h4>CS 498: Data Visualization</h4>
+      <div class="courses">
+        <p>
+        This was a really fun course that covered the inner workings of Tableau and then introduced the JavaScript
+        D3 library. I was excited to strengthen my JavaScript skills. The principles of the course overlapped with my 9411 doctoral seminar in HCI and stressed the
+        importance of the user interface.
+      </p>
+      </div>
+    </div>
+  </div>
+  <div id="tabs-islt">
+    <div id="coursesislt">
+      <h4>ISLT 9409: Seminar in Digital Libraries</h4>
+      <div class="courses">
+        <p>
+        This course was all about digital capabilities in libraries, covering digitization and file formats. We
+        gained some experience harvesting metadata through Washington University and made recommendations for the
+        Cambio Center web site at the University of Missouri.
+        </p>
+      </div>
+      <h4>ISLT 9410: Seminar in Emerging Technologies</h4>
+      <div class="courses">
+        <p>
+        This course stands out for me because it's where I first started using Twitter extensively. It also
+        encouraged me to try new things.
+        </p>
+      </div>
+      <h4>ISLT 9410: Seminar in Digital Humanities</h4>
+      <div class="courses">
+        <p>
+        Exploring the possibilities of the digital humanities was interesting and opened new doors for me. This
+        course was mostly reading but I later did an intership at the Center for Research in the Digital
+        Humanties (<a href="https://cdrh.unl.edu" target="_blank">CRDH</a>) at the University of Nebraska working
+        on the Lewis and Clark data.
+        </p>
+      </div>
+      <h4>ISLT 9410: Seminar in Geographic Information Systems</h4>
+      <div class="courses">
+        <p>
+        This course gave me practice displaying data through maps. The theme for the class was "book deserts"
+        and gave me an understanding of how location can affect the access and choices we have for information.
+        </p>
+      </div>
+      <h4>ISLT 9443: The Academic Library</h4>
+      <div class="courses">
+        <p>
+        Since I'm interested in working in academia, I was glad to learn about the academic library. This course
+        gave me insight into no only how the college library works, but also how it fits into the whole
+        university system.
+        </p>
+      </div>
+      <h4>ISLT 9446: International & Comparative Librarianship</h4>
+      <div class="courses">
+        <p>
+        I have always been interested in other countries and languages. This course gave me the opportunity to
+        research other countries that I was interested in, two of which were Slovenia (my ancestry) and
+        Mongolia. I  had a friend living in Mogolia at the time and was able to ask her about the libraries
+        there. The interesting thing about Mongolia is that many areas are remote and yet the people have found
+        ways to get remote access through books and technology.
+        </p>
+      </div>
+      <h4>ISLT 9432: Online Searching</h4>
+      <div class="courses">
+        <p>
+        This course was so much fun because we got search for topics in different databases. It introduced me to
+        the concepts of precision and recall which were re-addressed in my text analysis class.
+        </p>
+      </div>
+      <h4>ISLT 9440: Learning with the Internet</h4>
+      <div class="courses">
+        <p>
+        This was one of the few courses I have taken that covered learning design. We learned the fundamentals of
+        meaningful learning and how to incorporate technology into our class lessons. Coming from the library and
+        information science background, this was new territory for me. The basics of this course really
+        helped me a year later when I was teaching "Technology to Enhance Learning" (ISLT 4467).
+        </p>
+      </div>
+      <h4>ISLT 9454: Copyright</h4>
+      <div class="courses">
+        <p>
+        Even though this course was totally outside of what I was accustomed to, I knew this was an important
+        class to take in the library and educational world. It's a complicated subject and I can't say that I
+        remember all the rules but it made me aware of copyright and what needs to be considered.
+        </p>
+      </div>
+      <h4>ISLT 9466: Learning Analytics</h4>
+      <div class="courses">
+        <p>
+        In this course, we delved into educational data and visualization from a teacher's point of view. We
+        examined what data shows evidence of learning and improvement.
+        </p>
+      </div>
+      <h4>ISLT 7356: Interactive Web Design with JavaScript</h4>
+      <div class="courses">
+        <p>
+        I was already familiar with JavaScript but I took this course because it focused on jQuery, a
+        JavaScript library that I was unfamiliar with. It allowed me to use more features and become more
+        comfortable with this langugage.
+        </p>
+      </div>
+      <h4>ISLT 7375: Mobile Web App Development</h4>
+      <div class="courses">
+        <p>
+        Again, more JavaScript libraries to expand my knowledge. Developing mobile applications was just
+        something I wanted to learn but had never taken the time.
+        </p>
+      </div>
+      <h4>ISLT 7410: Seminar in Gaming</h4>
+      <div class="courses">
+        <p>
+        I'm not really a "gaming" person, but this course opened my eyes to the many learning possibilities
+        that gaming provides. We played games, developed a "game" plan for learning, and finally created
+        our own game using a tool called Stencyl. There is so much more that can be done with this, so it
+        gave me good start.
+        </p>
+      </div>
+  </div>
+</div>
+</body>
