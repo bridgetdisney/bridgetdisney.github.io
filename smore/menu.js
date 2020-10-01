@@ -8,7 +8,7 @@ function getMenu(page) {
 	var menustring;
 	
 	// Set up the menu list so that each item on the menu directs the user to the correct page
-	var menulist = {"Home": "index.html", 
+	var menulist = {"Home": "smore/index.html", 
 	                "Heat Source": "heatsource.html", 
 	                "Ingredients": "ingredients.html", 
 	                "Assembly": "assembly.html", 
