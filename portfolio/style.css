@@ -237,6 +237,7 @@ select {
 	background-position: top;
 }
 #cvdiv {
+
 }
 #appsdiv {
   background-color: white;
@@ -282,6 +283,7 @@ select {
   color: navy;
   margin-left: 15%;
   margin-right: 15%;
+  font-weight: normal;
 }
 .strong {
   color: black;
