@@ -6,47 +6,35 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>
   $(document).ready(function() {
     $("#coursesdiv").tabs();
-    $("#coursesdoctoral").accordion({
-      event: "click",
-      collapsible: true,
-      active:false,
-      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
-    });
-    /*
-    $("#coursesminor").accordion({
-      event: "click",
-      collapsible: true,
-      active:false,
-      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
-    });
-    $("#coursesislt").accordion({
-      event: "click",
-      collapsible: true,
-      active:false,
-      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
-    }); */
   });
   </script>
 </head>
 <body>
   <div id="topdiv">
-    <img src="images/twitter.png" height="40px">
-    <img src="images/mail.png" height="40px">
+    <a href="https://twitter.com/bridget_disney" target="_blank"><img src="images/twitter.png" height="40px"></a>
+    <a href="mailto:bridget.disney@gmail.com" target="_blank"><img src="images/mail.png" height="40px"></a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
   <div id="headerdiv">
-    <span id="myname">BRIDGET DISNEY</span>
+    <h3 class="myname">BRIDGET DISNEY</h3>
+    <div class="myname mynameplus">
+      School of Information Science and Learning Technologies<br>
+      University of Missouri
+    </div>
+  </div>
+  <div class="navdiv">
     <span id="nav">
       <span id="navlink"><a href="index.html">HOME</a></span>
-      <span id="navlink"><a href="roadmap.html">ROADMAP</a></span>
+      <span id="navlink"><a href="researchinterests.html">RESEARCH INTERESTS</a></span>
       <span id="navlink"><a href="residency.html">RESIDENCY PLAN</a></span>
       <span id="navlinkselected">COURSES</span>
-      <span id="navlink"><a href="cv.pdf" target="_blank">CV</a></span>
+      <span id="navlink"><a href="apps.html">APPLICATIONS</a></span>
+      <span id="navlink"><a href="cv.html">CURRICULUM VITAE</a></span>
     </span>
   </div>
 <h2>Courses</h2>
@@ -59,9 +47,9 @@
   </ul>
   <div id="tabs-doctoral">
     <div id="coursesdoctoral">
-    <h4>ISLT 9411: Design/Analysis of Research in ISLT</h4>
+    <h4 class="strong">ISLT 9411: Design/Analysis of Research in ISLT</h4>
     <div class="courses">
-      <img class="photoimg" src="images/research.jpg" height="25%">
+      <img class="photoimg" src="images/research.jpg" height="100px">
       <p>
       This course walked us through the process of creating a research paper or proposal. I chose
       to write a proposal to study how refugees could facilitate the exchange of technological
@@ -77,7 +65,7 @@
     </div>
     <h4>ISLT 9411: Human Information Behavior</h4>
     <div class="courses">
-      <img class="photoimg" src="images/infoseek.png" height="25%">
+      <img class="photoimg" src="images/infoseek.png" height="100px">
       <p>
       In this class we worked as a group to flesh out the practices and theories of information
       seeking behavior. We each had to present on a topic and guide a class discusson on relevant
@@ -100,7 +88,7 @@
     </div>
     <h4>ISLT 9411: Human Computer Interaction</h4>
     <div class="courses">
-      <img class="photoimg" src="images/hci.jpg" height="15%">
+      <img class="photoimg" src="images/hci.jpg" height="60px">
       <p>This course covered the multidisciplined topic of human computer interaction. We evaluated systems
       design from a theoretical and usability perspective, studying concepts such as cognitive load, working
       memory, and short/long term memory. An example that we examined in depth was the
@@ -115,6 +103,7 @@
       </p>
     </div>
   </div>
+  <h5 class="extranote">Images from Pixabay</h5>
 </div>
 <div id="tabs-research">
   <div id="coursesresearch">
@@ -146,7 +135,7 @@
     </div>
   </div>
   <div id="tabs-minor">
-    These are courses in data science taken from the MSCS program at the University of Illinois.
+    <h5 class="extranote">These are courses in data science taken from the MSCS program at the University of Illinois.</h5>
     <div id="coursesminor">
       <h4>CS 410: Text Information Systems</h4>
       <div class="courses">

@@ -6,41 +6,49 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>
-  $(document).ready(function(){
-    $("#residencydiv").accordion({
-      event: "click",
-      collapsible: true,
-      active: false,
-      icons: { "header": "ui-icon-triangle-1-e", "activeHeader": "ui-icon-triangle-1-s" }
-    });
+  $(document).ready(function() {
+    $("#residencydiv").tabs();
   });
   </script>
 </head>
 <body>
   <div id="topdiv">
-    <img src="images/twitter.png" height="40px">
-    <img src="images/mail.png" height="40px">
+    <a href="https://twitter.com/bridget_disney" target="_blank"><img src="images/twitter.png" height="40px"></a>
+    <a href="mailto:bridget.disney@gmail.com" target="_blank"><img src="images/mail.png" height="40px"></a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
   <div id="headerdiv">
-    <span id="myname">BRIDGET DISNEY</span>
-    <span id="nav">
-      <span id="navlink"><a href="index.html">HOME</a></span>
-      <span id="navlink"><a href="roadmap.html">ROADMAP</a></span>
-      <span id="navlinkselected">RESIDENCY PLAN</span>
-      <span id="navlink"><a href="courses.html">COURSES</a></span>
-      <span id="navlink"><a href="cv.pdf" target="_blank">CV</a></span>
-    </span>
+    <h3 class="myname">BRIDGET DISNEY</h3>
+    <div class="myname mynameplus">
+      School of Information Science and Learning Technologies<br>
+      University of Missouri
+    </div>
+  </div>
+  <div class="navdiv">
+      <span id="nav">
+        <span id="navlink"><a href="index.html">HOME</a></span>
+        <span id="navlink"><a href="researchinterests.html">RESEARCH INTERESTS</a></span>
+        <span id="navlinkselected">RESIDENCY PLAN</span>
+        <span id="navlink"><a href="courses.html">COURSES</a></span>
+        <span id="navlink"><a href="apps.html">APPLICATIONS</a></span>
+        <span id="navlink"><a href="cv.html">CURRICULUM VITAE</a></span>
+      </span>
+    </div>
   </div>
 <h2>Residency Plan</h2>
 <div id="residencydiv">
-  <h3>Research and Writing</h3>
-  <div class="residency">
+  <ul>
+    <li><a href="#tabs-research">Research and Writing</a></li>
+    <li><a href="#tabs-teaching">Teaching</a></li>
+    <li><a href="#tabs-system">System Development</a></li>
+    <li><a href="#tabs-professional">Professional Participation and Service</a></li>
+  </ul>
+  <div id="tabs-research">
     <ul>
-      <li>Peer-Reviewed Presentation and Proceedings</li>
+      <li class="strong">Peer-Reviewed Presentation and Proceedings</li>
       <ul>
         <li>Gibson, Twyla, Stuart J. Murray, Sanda Erdelez, Bridget Disney, and Brian Greenspan.
           2018. <q>Digital Humanities, Libraries, and Crowdsourcing: Foundations of Digital Textual
@@ -60,24 +68,31 @@
       </ul>
     </ul>
     <ul>
-      <li>Other Papers and Research</li>
+      <li class="strong">Other Presentations</li>
+      <ul>
+        <li>Disney, B., Kunze, J., Phillips, M., & Zhang, H. (2020, January)
+          California Digital Library: YAMZ. Poster presented at the LEADS Forum, Philadelphia, Pennsylvania.</li>
+      </ul>
+    </ul>
+    <ul>
+      <li class="strong">Other Papers and Research</li>
       <ul>
         <li>(2019) An Overview of the YAMZ Metadata Project at the California Digital Library.
 Submitted to iConference 2020 as a poster proposal with Hanlin Zhang and John Kunze.</li>
         <li>(2019) Searching for Datasets: The Quest for Relevant Data.
 Written for ISLT 9411 Information Seeking and Behavior.</li>
         <li>(2019) Data Presentation: Rural Libraries in Nebraska.
-Written for ISLT 9410: Library Data Assessment.</li>
+Written for ISLT 9410 Library Data Assessment.</li>
         <li>(2018) StoryMap ArcGIS Tutorial.
 Developed for GIS workshop at MLA that was cancelled.</li>
         <li>(2018) User Motivations for Choosing a Social Network (with Kerry Townsend).
-Written for 9411: Human Computer Interaction.</li>
+Written for 9411 Human Computer Interaction.</li>
         <li>(2018) People Helping People: Exploring Ways Refugees Help Each Other with Technology.
-Written for ISLT 9411 (Research in Information Science and Learning Technologies).</li>
+Written for ISLT 9411 Research in Information Science and Learning Technologies.</li>
       </ul>
     </ul>
     <ul>
-      <li>Data Visualizations</li>
+      <li class="strong">Data Visualizations</li>
       <ul>
         <li>(2020) Excess Deaths in the United States not Attributed to COVID-1
 Tableau visualization for data science class</li>
@@ -86,14 +101,13 @@ JavaScript (D3) visualization for data science class</li>
       </ul>
     </ul>
   </div>
-  <h3>Teaching at the University of Missouri</h3>
-  <div class="residency">
+  <div id='tabs-teaching'>
     <table>
       <tr>
-        <th>Course</th>
-        <th>Date</th>
-        <th>Role</th>
-        <th>Notes</th>
+        <th class="strong">Course</th>
+        <th class="strong">Date</th>
+        <th class="strong">Role</th>
+        <th class="strong">Notes</th>
       </tr>
       <tr>
         <td>4467 (01) Technology to Enhance Learning</td>
@@ -136,63 +150,85 @@ JavaScript (D3) visualization for data science class</li>
       </tr>
     </table>
   </div>
-  <h3>System Development</h3>
-  <div class="residency">
+  <div id="tabs-system">
     <ul>
-      <li>LEADS-4-NDP (LIS Education and Data Science for the National Digital Platform) <img src="images/information.png" width="20px"></li>
+      <li class="strong"><a href="https://cci.drexel.edu/mrc/research/leads/" target="_blank">LEADS-4-NDP</a>
+        (LIS Education and Data Science for the National Digital Platform)</li>
         <ul>
           <li>Summer internship program</li>
-          <li>Worked on YAMZ (Yet Another Metadata Zoo), a metadata project at the California Digital Library</li>
+          <li>Worked on YAMZ (Yet Another Metadata Zoo), a metadata project at the
+            <a href="https://cdlib.org" target="_blank">California Digital Library</a>
+          <a href="images/yamz.png" target="_blank"><img src="images/information.png" width="20px"></a></li>
           <li>Web accessible using Python, Flask, and PostgreSQL</li>
         </ul>
-      <li>Digital Humanities Commons (DHC) website <img src="images/information.png" width="20px"></li>
-        <ul>
-          <li>Programming support for the DHC website using WordPress</li>
-          <li>CSS (cascading style sheets), content changes,  and image management</li>
-        </ul>
-      <li>Faculty projects with DHC <img src="images/information.png" width="20px"></li>
-        <ul>
-          <li>Provided support for Timothy Materer&apos;s Scalar website</li>
-          <li>Participated in initial proposal for Kathleen Slane&apos;s archeology project</li>
-        </ul>
-      <li>Greek Key Virtual Research Environment <img src="images/information.png" width="20px"></li>
-        <ul>
-          <li>Revised documentation and redesign</li>
-          <li>Assisted Twyla Gibson with presentation
-        </ul>
     </ul>
-
-  </div>
-  <h3>Professional Participation and Service</h3>
-  <div class="residency">
     <ul>
-      <li>Reviews</li>
+    <li class="strong">Digital Humanities Commons (DHC) website
+      <a href="images/dhc.png" target="_blank"><img src="images/information.png" width="20px"></a></li>
+      <ul>
+        <li>Programming support for the DHC website using WordPress</li>
+        <li>CSS (cascading style sheets), content changes,  and image management</li>
+      </ul>
+    </ul>
+    <ul>
+    <li class="strong">Faculty projects with DHC</li>
+      <ul>
+        <li>Provided support for Timothy Materer&apos;s Scalar website</li>
+        <li>Participated in initial proposal for Kathleen Slane&apos;s archeology project
+        <a href="images/slane.png" target="_blank"><img src="images/information.png" width="20px"></a></li>
+      </ul>
+    </ul>
+    <ul>
+    <li class="strong">Greek Key Virtual Research Environment
+      <a href="images/vre.png" target="_blank"><img src="images/information.png" width="20px"></a></li>
+      <ul>
+        <li>Revised documentation and redesign</li>
+        <li>Assisted Twyla Gibson with presentation
+      </ul>
+  </ul>
+  <h5 class="extranote">Clicking <img src="images/information.png" width="20px"> will open up an image in a new tab.</h5>
+  </div>
+  <div id="tabs-professional">
+    <ul>
+      <li class="strong">Reviews</li>
       <ul>
         <li>iConference 2021 (Oct 2020) - Will review 4 papers as an independent reviewer</li>
         <li>iConference 2020 (Oct 2019) - Reviewed 4 papers as an independent reviewer</li>
         <li>iConference 2019 (Oct 2018) - Contributed to review for Professor Jahnke</li>
         <li>ASIS&T 2018 (Apr 2018) - Contributed to two reviews for Professor Gibson</li>
       </ul>
-      <li>Nebraska Library Association</li>
+    </ul>
+    <ul>
+      <li class="strong">Nebraska Library Association</li>
       <ul>
         <li>Scholarship Awards Committee 2019 to present</li>
         <li>NLA Conference Silent Auction 2019</li>
       </ul>
-      <li>Memberships</li>
+    </ul>
+    <ul>
+      <li class="strong">Memberships</li>
       <ul>
         <li>American Library Association (ALA)</li>
         <li>Nebraska Library Association (NLA)</li>
         <li>Library and Information Science Graduate Student Association (LISGSA)</li>
         <li>Association of Information Science & Technology (ASIS&T)</li>
       </ul>
-      <li>Meetings and Conferences</li>
+    </ul>
+    <ul>
+      <li class="strong">Meetings and Conferences</li>
         <ul>
           <li>ASIS&T Annual Meeting (Vancouver, BC, Nov 2018) -
           Presented the Greek Key: Virtual Research Environment with Twyla Gibson</li>
           <li>Critical Questions in Education Symposium (Kansas City, MO, Oct 2018) -
           Presented the Greek Key: Virtual Research Environment with Twyla Gibson</li>
-        </ul>
       </ul>
-
+    </ul>
+    <ul>
+      <li class="strong">Additional Classes</li>
+        <ul>
+          <li>Research Data Management and Sharing (Coursera, Sept 2020)</li>
+          <li>Data Science Foundations Carpentry (Drexel University, Jan 2020)</li>
+      </ul>
+    </ul>
   </div>
 </body>
