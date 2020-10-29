@@ -109,7 +109,13 @@ div.courses {
   background-color: #ffffff;
   margin-left: 10px;
 }
-#imagediv, #researchdiv {
+#imagediv {
+  width: 90%;
+  background-color: #ffffff;
+  text-align: justify;
+  color: #000000;
+}
+.researchdiv {
   width: 90%;
   background-color: #ffffff;
   text-align: justify;
@@ -144,7 +150,7 @@ p {
   margin-right: 24%;
 }
 .indentresearch {
-  margin-left: 20%;
+  margin-left: 18%;
   margin-right: 5%;
 }
 .photoimg {
@@ -161,7 +167,7 @@ table{
   border-collapse: collapse;
 }
 td {
-  background-color: lightyellow;
+  background-color: white;
   vertical-align: top;
   text-align: left;
   border: 0;
@@ -237,13 +243,14 @@ select {
 	background-position: top;
 }
 #cvdiv {
-
+  height: 100%;
 }
 #appsdiv {
   background-color: white;
   margin-top: 20px;
-  margin-left: 300px;
-  font-size: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  //font-size: 20px;
 }
 #appsdiv a {
   color: blue;
@@ -268,7 +275,6 @@ select {
   color: purple;
 }
 .description {
-  margin-left: 25px;
   font-size: 16px;
 }
 .twocolumn {
@@ -299,4 +305,10 @@ select {
   margin-bottom: 1px;
   font-weight: normal;
   color: purple;
+}
+.reflect {
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color: lightyellow;
+  padding: 25px;
 }
