@@ -1,0 +1,95 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+  background-color: #0e73aa;
+}
+h2 {
+  text-align: center;
+}
+div {
+  background-color: #0e73aa;
+}
+p {
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+img:hover {
+  opacity: .9;
+}
+table{
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+td {
+  background-color: #0e73aa;
+  vertical-align: middle;
+  text-align: center;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#bcgmap {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mapreference {
+  display: block;
+  margin-top: 3px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font: 9px sans-serif;
+}
+#title {
+  color: #ffffff;
+  font-size: 25px;
+}
+#rightarrow {
+  text-align: left;
+}
+#leftarrow {
+  text-align: right;
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 54px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #f5f2d0;
+    border: 0px;
+    pointer-events: none;
+}
+div.annotation {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 65px;
+  padding: 2px;
+  font: 16px sans-serif;
+  background-color: #FFDEAD;
+  border: 0px;
+  pointer-events: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: lightgray;
+}
+a:visited, a:active, a:selected, a:link {
+  color: white;
+}
+select {
+  position: relative;
+  background-color: lightblue;
+  height: 30px;
+  font 12px sans-serif;
+  margin-left: 120px;
+  margin-top: 50px;
+}

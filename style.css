@@ -1,20 +1,162 @@
-/* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial;
-  background-color: #0e73aa;
+  font-family: "Montserrat";
+  font-size: 16px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: normal;
 }
-h2 {
+#topdiv {
+  text-align: right;
+  background-color: #333333;
+  height: 35px;
+}
+#headerdiv {
+  background-color: #455968;
+  font-size: 26px;
+  color: #ffffff;
+  height: 80px;
   text-align: center;
 }
+.navdiv {
+  background-color: #333333;
+  color: #ffffff;
+  height: 2.75em;
+  text-align: center;
+  width: 100%;
+}
+.myname {
+  background-color: #455968;
+  margin-left: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-stretch: expanded;
+}
+.mynameplus {
+  color: darkgray;
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.column1 {
+  background-color: #455968;
+  float: left;
+  width: 44%;
+  background-color: white;
+  text-align: center;
+}
+.column2 {
+  background-color: #455968;
+  float: left;
+  width: 56%;
+  background-color: white;
+  text-align: center;
+}
+.column {
+  float: left;
+  width:50%;
+  background-color: white;
+  text-align: center;
+}
+#nav {
+  font-size: 14px;
+  margin-top: 10px;
+  float: left;
+  width: 100%;
+}
+#navlink {
+  font-weight: bold;
+  display: inline;
+  padding-right: 25px;
+  padding-left: 25px;
+  white-space: nowrap;
+}
+#navlinkselected{
+  color: yellow;
+  display:inline;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-weight:bolder;
+  white-space: nowrap;
+}
+h2, h5, h6 {
+  text-align: center;
+}
+.futureresearchheading {
+  color: black;
+  font-weight: bolder;
+  margin-left: 15%;
+}
+.extranote {
+  font-weight: bold;
+  color: purple;
+}
+h4 {
+  text-align: left;
+  margin-left: 25px;
+}
 div {
-  background-color: #0e73aa;
+  background-color: #333333;
+}
+div.residency {
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+div.courses {
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+#imagediv {
+  width: 90%;
+  background-color: #ffffff;
+  text-align: justify;
+  color: #000000;
+}
+.researchdiv {
+  width: 90%;
+  background-color: #ffffff;
+  text-align: justify;
+  color: #000000;
+}
+#residencydiv {
+  margin-left: 50px;
+  background-color: #ffffff;
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+#coursesdiv {
+  margin-left: 50px;
+  background-color: #ffffff;
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+#coursesdoctoral, #coursesresearch, #coursesminor, #coursesislt {
+  background-color: #ffffff;
 }
 p {
   margin-top: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.indent {
+  margin-left: 15%;
+  margin-right: 5%;
+}
+.indenthome {
+  margin-left: 18%;
+  margin-right: 24%;
+}
+.indentresearch {
+  margin-left: 18%;
+  margin-right: 5%;
+}
+.photoimg {
+  float: right;
+  margin-left: 1em;
+  margin-right: 4em;
 }
 img:hover {
   opacity: .9;
@@ -25,9 +167,9 @@ table{
   border-collapse: collapse;
 }
 td {
-  background-color: #0e73aa;
-  vertical-align: middle;
-  text-align: center;
+  background-color: white;
+  vertical-align: top;
+  text-align: left;
   border: 0;
   padding-top: 10px;
   padding-bottom: 5px;
@@ -79,11 +221,15 @@ div.annotation {
 a {
   text-decoration: none;
 }
-a:hover {
+a:link, a:visited {
   color: lightgray;
 }
-a:visited, a:active, a:selected, a:link {
-  color: white;
+a:hover {
+  color: lightyellow;
+}
+a:active {
+  color: black;
+  font-weight: bold;
 }
 select {
   position: relative;
@@ -92,4 +238,77 @@ select {
   font 12px sans-serif;
   margin-left: 120px;
   margin-top: 50px;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+#cvdiv {
+  height: 100%;
+}
+#appsdiv {
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  //font-size: 20px;
+}
+#appsdiv a {
+  color: blue;
+  font-weight: bold;
+}
+#appsdiv a:hover {
+  color: purple;
+  font-weight: bold;
+}
+#residencydiv a {
+  color: blue;
+  font-weight: bold;
+}
+#residencydiv a:hover {
+  color: purple;
+}
+#coursesdiv a {
+  color: blue;
+  font-weight: bold;
+}
+#coursesdiv a:hover {
+  color: purple;
+}
+.description {
+  font-size: 16px;
+}
+.twocolumn {
+  background-color: #ffffff;
+  width: 85%;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-bottom: 20px;
+}
+.blue {
+  color: navy;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-weight: normal;
+}
+.strong {
+  color: black;
+  font-weight: bold;
+}
+.mainimage {
+  width: 95%;
+  height: 95%;
+}
+.myfigure {
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  font-weight: normal;
+  color: purple;
+}
+.reflect {
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color: lightyellow;
+  padding: 25px;
 }

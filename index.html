@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<html>
 <head>
-  <title>Vaccinations</title>
+  <title>Bridget's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<table><tr>
-  <td id="title">BCG Vaccine and COVID-19 Immunity<br>
-    <span style="color:#bebebe;font:16px sans-serif;">(Home)</span></td>
-  <td id="leftarrow">
-    <img src="images/previous.png" height="50px" title="Previous Page" style="opacity:0.1;">
-  </td><td style="width:350px">
-    <a href="v1.html">
-      <img src="images/v1.png" style="height:70px;width:100px;border:5px solid #0e73aa;" title="Average Percentage by Country"></a>
-    <a href="v2.html">
-      <img src="images/v2.png" style="height:70px;width:100px;border:5px solid #0e73aa;" title="Yearly Percentage by Country"></a>
-    <a href="v3cases.html">
-      <img src="images/v3.png" style="height:70px;width:100px;border:5px solid #0e73aa;" title="Vaccine vs. Cases/Deaths"></a>
-  </td><td id="rightarrow">
-    <a href="v1.html"><img src="images/next.png" height="50px" title="Next Page"></a>
-  </td>
-</table>
-<br>
-  <h2>Do existing vaccines (specifically the BCG vaccine) provide protection for COVID-19?</h2>
-  <p>
-    In the age of COVID-19, scientists have been studying existing factors that may or may not contribute its spread
-    and effects.The BCG (bacille Calmette-Guerin) vaccine protects against tuberculosis around the world. This vaccine is mostly used
-    in countries where tuberculosis is common but is not prevalent where there is a low incidence of this disease.
-<br><br>
-  This narrative visualization contributes to the analysis of the BCG vaccine as it pertains to possible COVID-19 immunity. Three
-  visualizations are provided, a circular graph showing average BCG use since 1980, a line graph for each country for the years since
-  1980, and a scatterplot comparing the BCG vaccine to COVID-19 cases and deaths by country.
-</p>
-<img id="bcgmap" src="images/bcgmap.png" style="height:300px;opacity:.7;">
-<span id="mapreference">Image retrieved from https://www.elsevier.es/es-revista-enfermedades-infecciosas-microbiologia-clinica-english-428-articulo-vaccination-against-tuberculosis-S2529993X18301990
-</span>
+  <div id="topdiv">
+    <a href="https://twitter.com/bridget_disney" target="_blank"><img src="images/twitter.png" height="40px"></a>
+    <a href="mailto:bridget.disney@gmail.com" target="_blank"><img src="images/mail.png" height="40px"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+  <div id="headerdiv">
+    <h3 class="myname">BRIDGET DISNEY</h3>
+    <div class="myname mynameplus">
+      School of Information Science and Learning Technologies<br>
+      University of Missouri
+    </div>
+  </div>
+  <div class="navdiv">
+    <span id="nav">
+      <span id="navlinkselected">HOME</span>
+      <span id="navlink"><a href="research.html">RESEARCH</a></span>
+      <span id="navlink"><a href="residency.html">RESIDENCY PLAN</a></span>
+      <span id="navlink"><a href="courses.html">COURSES</a></span>
+      <span id="navlink"><a href="apps.html">APPLICATIONS</a></span>
+      <span id="navlink"><a href="cv.html">CURRICULUM VITAE</a></span>
+    </span>
+  </div>
+  <br>
+  <div id="imagediv">
+    <div>
+      <img class="photoimg" src="images/bridget.jpg" height="130px">
+    </div>
+    <p class="indenthome">I am a PhD student at the University of Missouri&apos;s School of Information
+      Science and Educational Technology. I hold a Master of Arts degree in
+      Library and Information Science from the University of Missouri plus a BS/BA
+      in Computer Science and French from the University of Nebraska. Past  endeavors have
+      included working on the
+      Digital Humanities Commons website at the University of Missouri
+      and an internship at the Center for Digital Research
+      in the Humanities at the University of Nebraska.
+    </p>
+    <p class="indenthome">I have also been an instructor of
+      a technology class for educators (ISLT 4467: Inquiry into Empowering Learners with Technology) offered
+      in the College of Education. Before returning to school for my
+      library science degree, I worked as a software engineer at Northrop Grumman Corporation for 14 years.
+    </p>
+    <p class="indenthome">My research interests stem from the belief that the field of library and information
+      science has a lot to contribute to the application of data science in the academic and
+      real world. These areas include data science education for librarians, data curation
+      (including metadata and datasetdiscovery), research assistance services, data visualization,
+      text analysis, data mining, and digital humanities.
+    </p>
+  </div>
+  <hr width="70%">
+  <h2 class="blue">We are drowning in information but starved for knowledge...John Naisbitt</h2>
 </body>
-</html>
