@@ -24,7 +24,7 @@
   </table>
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
-<script src="annot.js"></script>
+<script src="./annot.js"></script>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -56,8 +56,8 @@ var svg = d3.select("#my_dataviz")
   .append("g")
     .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
 
-d3.csv("https://bridgetdisney.github.io/data/combined.csv", function(data) {
-
+//d3.csv("https://bridgetdisney.github.io/data/combined.csv", function(data) {
+d3.csv("https://bridgetdisney.com/bcg/data/combined.csv", function(data) {
   data.sort(function(x, y){
    return d3.ascending(x.avg, y.avg);
   })
