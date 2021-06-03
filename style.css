@@ -115,11 +115,11 @@ div.courses {
   text-align: justify;
   color: #000000;
 }
-.researchdiv {
-  width: 90%;
+#researchdiv {
+  margin-left: 50px;
   background-color: #ffffff;
-  text-align: justify;
-  color: #000000;
+  font-family: "Montserrat";
+  font-size: 16px;
 }
 #residencydiv {
   margin-left: 50px;
@@ -150,8 +150,11 @@ p {
   margin-right: 24%;
 }
 .indentresearch {
-  margin-left: 18%;
+  margin-left: 5%;
   margin-right: 5%;
+}
+#researchcenter {
+  text-align: center;
 }
 .photoimg {
   float: right;
@@ -165,6 +168,21 @@ table{
   width: 100%;
   border: 0;
   border-collapse: collapse;
+}
+#researchtable td {
+  border: 1px solid #ddd;
+  font-size: 10px;
+  padding: 5px;
+}
+#researchtable tr:nth-child(even){background-color: #f2f2f2;}
+
+#researchtable th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  background-color: white;
+  color: darkgray;
+  font-size: 10px;
 }
 td {
   background-color: white;
@@ -272,6 +290,13 @@ select {
   font-weight: bold;
 }
 #coursesdiv a:hover {
+  color: purple;
+}
+#researchdiv a {
+  color: blue;
+  font-weight: bold;
+}
+#researchdiv a:hover {
   color: purple;
 }
 .description {
