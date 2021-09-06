@@ -253,7 +253,7 @@ select {
   position: relative;
   background-color: lightblue;
   height: 30px;
-  font 12px sans-serif;
+  font: 12px sans-serif;
   margin-left: 120px;
   margin-top: 50px;
 }
@@ -261,7 +261,18 @@ select {
 	background-position: top;
 }
 #cvdiv {
-  height: 100%;
+  align-text: center;
+  margin-top: 20px;
+  background-color: white;
+  font-size: 25px;
+}
+#cvdiv a {
+  color: blue;
+  font-weight: bold;
+}
+#cvdiv a:hover {
+  color: purple;
+  font-weight: bold;
 }
 #appsdiv {
   background-color: white;
